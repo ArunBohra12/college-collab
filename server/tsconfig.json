@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    /* Projects */
+    "target": "es2016",
+
+    /* Modules */
+    "module": "commonjs",
+    "outDir": "./dist",
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+
+    /* Completeness */
+    "skipLibCheck": true
+  }
+}
