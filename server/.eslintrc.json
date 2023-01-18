@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:node/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }],
+    "prettier/prettier": "error",
+    "spaced-comment": "off",
+    "no-console": "warn",
+    "consistent-return": "off",
+    "func-names": "off",
+    "object-shorthand": "off",
+    "no-process-exit": "off",
+    "no-param-reassign": "off",
+    "no-return-await": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "argsIgnorePattern": "req|res|next|val" }]
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

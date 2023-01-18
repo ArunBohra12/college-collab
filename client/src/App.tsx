@@ -1,6 +1,4 @@
-const App = (): JSX.Element => {
-  console.log('arun');
-
+function App(): JSX.Element {
   return <div></div>;
 }
 
