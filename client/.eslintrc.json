@@ -26,6 +26,11 @@
     "no-unused-vars": "error",
     "consistent-return": "off",
     "no-param-reassign": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "prettier/prettier": 
+    [ "error",
+      {
+        "endOfLine": "auto"}
+    ]
   }
 }
