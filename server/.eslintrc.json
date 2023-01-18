@@ -10,7 +10,6 @@
   "parser": "@typescript-eslint/parser",
   "rules": {
     "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }],
-    "prettier/prettier": "error",
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
@@ -22,7 +21,12 @@
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "argsIgnorePattern": "req|res|next|val" }]
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "argsIgnorePattern": "req|res|next|val" }],
+    "prettier/prettier": 
+    [ "error",
+      {
+        "endOfLine": "auto"}
+    ]
   },
   "parserOptions": {
     "sourceType": "module"
