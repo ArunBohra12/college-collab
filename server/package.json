@@ -2,12 +2,11 @@
   "name": "college-collab",
   "version": "0.0.0",
   "description": "Backend for the application",
-  "main": "server.ts",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon --exec ts-node-dev --respawn server.ts",
-    "prod": "SET NODE_ENV=production&&nodemon --exec ts-node-dev --respawn server.ts",
-    "build": "tsc",
-    "serve": "npm run build && node ./dist/server.js"
+    "dev": "nodemon server.js",
+    "prod": "SET NODE_ENV=production&&nodemon server.js"
   },
   "author": "Arun Bohra",
   "license": "ISC",

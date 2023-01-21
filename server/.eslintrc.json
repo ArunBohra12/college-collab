@@ -1,13 +1,6 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:node/recommended",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "plugins": ["@typescript-eslint", "prettier"],
-  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb", "plugin:node/recommended", "eslint:recommended", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
     "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }],
     "spaced-comment": "off",
