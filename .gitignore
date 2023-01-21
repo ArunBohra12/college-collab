@@ -28,4 +28,5 @@ client/*.local
 
 # ###################################
 # FILES TO IGNORE ON THE SERVER
+server/.env
 
