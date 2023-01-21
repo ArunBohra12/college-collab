@@ -22,10 +22,11 @@
     "class-methods-use-this": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "argsIgnorePattern": "req|res|next|val" }],
-    "prettier/prettier": 
-    [ "error",
+    "prettier/prettier": [
+      "error",
       {
-        "endOfLine": "auto"}
+        "endOfLine": "auto"
+      }
     ]
   },
   "parserOptions": {

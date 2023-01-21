@@ -27,10 +27,11 @@
     "consistent-return": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
-    "prettier/prettier": 
-    [ "error",
+    "prettier/prettier": [
+      "error",
       {
-        "endOfLine": "auto"}
+        "endOfLine": "auto"
+      }
     ]
   }
 }
