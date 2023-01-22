@@ -1,19 +1,25 @@
-// get all bunties -->
-// post bounty
-// post answer
-// show answer  (UH - H)
-// pick answer
-//
+// get all bunties --> D
+// get bounties according to user interest
+// post bounty --> D
+// post answer --> D
+// show answer  --> D
+// unhide ans --> D
+// pick answer --> D
+
+// bounty time limit
+// pick best answer limit
+// deactivate bounty once a best answer is picked
 
 import Answer from '../models/answerModel';
 import Bounty from '../models/bountyModel';
+import User from '../models/userModel';
 import AppError from '../utils/AppError';
-import { catchAsync } from '../utils/catchAsync';
+import catchAsync from '../utils/catchAsync';
 
 export const getAllBounties = catchAsync(async (req, res, next) => {
   const bounties = await Bounty.find();
 
-  res.json(200).json({
+  res.status(200).json({
     status: 'success',
     bounties,
   });
@@ -40,7 +46,6 @@ export const postBounty = catchAsync(async (req, res, next) => {
 
 export const postAnswer = catchAsync(async (req, res, next) => {
   const bountyId = req.params.bounty;
-  console.log(req.user);
 
   const answer = await Answer.create({
     ans: req.body.answer,
@@ -59,3 +64,96 @@ export const postAnswer = catchAsync(async (req, res, next) => {
     updatedBounty,
   });
 });
+
+export const unhideAnswer = catchAsync(async (req, res, next) => {
+  const answerId = req.body.answer;
+
+  const updatedAnswer = await Answer.findByIdAndUpdate(answerId, {
+    hidden: false,
+  });
+
+  res.status(201).json({
+    status: 'success',
+    updatedAnswer,
+  });
+});
+
+export const showAnswer = catchAsync(async (req, res, next) => {
+  //   cut credit and show first answer
+  const bountyId = req.params.bounty;
+  const userId = req.user.id;
+  const userCredits = req.user.credits;
+
+  const bounty = await Bounty.findById(bountyId).populate('answers', 'hidden');
+
+  //   check if any answer is viewed
+  if (bounty.answers.filter((answer) => answer.hidden)) {
+    return next(new AppError('User has already viewed an answer!!'));
+  }
+
+  const bountyPrice = bounty.price;
+  const safeFee = 0.4 * bountyPrice;
+
+  if (userCredits < safeFee) {
+    return next(new AppError('User must have 40% addditional credits for making a bounty'));
+  }
+
+  const updateUserCredits = await User.findByIdAndUpdate(userId, {
+    credits: userCredits - safeFee,
+  });
+
+  if (updateUserCredits) {
+    return next(new AppError('User credits couldnt be credited due to some error!!'));
+  }
+
+  unhideAnswer();
+});
+
+export const pickAnswer = catchAsync(async (req, res, next) => {
+  // set ans to best in bounty
+  // send credits to picked ans user
+  // give user back safeFee
+
+  const userId = req.user.id;
+  const bountyId = req.params.bounty;
+  const { hunterId, answer } = req.body;
+
+  const bounty = await Bounty.findById(bountyId);
+
+  const bountyPrice = bounty.price;
+  const safeFee = 0.4 * bountyPrice;
+
+  const updatedBounty = await Bounty.findByIdAndUpdate(bountyId, {
+    bestAnswer: answer,
+  });
+
+  if (!updatedBounty) {
+    return next(new AppError('Best Answer couldnt be picked!!'));
+  }
+
+  const updatedHunter = await User.findByIdAndUpdate(hunterId, {
+    credits: { $inc: bounty.price },
+  });
+
+  if (!updatedHunter) {
+    return next(new AppError('Credits couldnt be transferred to the'));
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(userId, {
+    credits: { $inc: safeFee },
+  });
+
+  if (!updatedUser) {
+    return next(new AppError('SafeFede couldnt be added to added to Users account'));
+  }
+
+  res.status(201).json({
+    sttaus: 'success',
+    updatedBounty,
+    updatedHunter,
+    updatedUser,
+  });
+});
+
+//  all ans are hidden
+// once user tries to unhide any answer, it will check if its the first answer to be shown --> unhide ans and cut credits;

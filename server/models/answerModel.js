@@ -11,9 +11,11 @@ const answerSchema = new mongoose.Schema({
   },
   hidden: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 });
+
+// poulate users name,img, bounty level and tagline
 
 const Answer = mongoose.model('Bounty', answerSchema);
 

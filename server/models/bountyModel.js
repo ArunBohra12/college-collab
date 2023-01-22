@@ -20,7 +20,16 @@ const bountySchema = new mongoose.Schema({
       ref: 'Answer',
     },
   ],
+  bestAnswer: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Answer',
+    default: null,
+  },
 });
+
+// active, due date
+
+// a pre hook populating answers which are not hidden
 
 const Bounty = mongoose.model('Bounty', bountySchema);
 
