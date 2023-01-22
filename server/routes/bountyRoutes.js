@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.use(authController.protect);
 
-router.get('/bounties', bountyController.getAllBounties);
-router.post('/bounties', bountyController.postBounty);
+router.get('/', bountyController.getAllBounties);
+router.post('/', bountyController.postBounty);
 
 router.post('/:bounty/hunt', bountyController.postAnswer);
 
