@@ -1,4 +1,4 @@
-*{}
+*,
 *::before,
 *::after {
   margin: 0;
@@ -13,9 +13,17 @@ html {
   font-size: 62.5%;
 }
 
-body {
+/* "html body" - to override the chakra ui styles */
+html body {
   box-sizing: border-box;
   font-size: 1.6rem;
+  min-height: 100vh;
+  background-color: #09223d; /* "dark-blue" color from brand colors */
+  color: #d1deea; /* "white" color from brand colors */
+}
+
+#root {
+  min-height: 100vh;
 }
 .app{
   background-color: #083256;
