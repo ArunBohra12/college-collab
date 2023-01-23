@@ -1,10 +1,11 @@
-*,
+*{}
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
   font-family: inherit;
+
 }
 
 html {
@@ -15,4 +16,8 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
+}
+.app{
+  background-color: #083256;
+  min-height: 60rem;
 }
