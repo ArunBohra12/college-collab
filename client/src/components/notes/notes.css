@@ -1,0 +1,18 @@
+.file{
+    
+     display: flex;
+     justify-content: center;
+     border: 1px solid gray;
+     margin-left: 40rem;
+     margin-right: 40rem;
+     /* background-color: aqua; */
+    }
+
+.file-input{
+    outline: none;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+       padding-left: 6rem;
+        padding-right: 6rem;
+        opacity: 0;
+}
