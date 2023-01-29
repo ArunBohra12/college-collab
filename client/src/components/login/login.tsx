@@ -2,7 +2,7 @@ import { Box, Button, Heading, Img, Input } from '@chakra-ui/react';
 import React from 'react';
 import './login.css';
 
-function Login() {
+function Login(): JSX.Element {
   return (
     <div>
       <Box display='flex'>
