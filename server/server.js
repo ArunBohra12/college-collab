@@ -2,6 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
+import AppError from './utils/AppError.js';
+
+import authRouter from './routes/authRoutes.js';
+import bountyRouter from './routes/bountyRoutes.js';
+import globalErrorHandler from './controllers/errorController.js';
 
 import notesRouter from './routes/notesRoutes.js';
 
@@ -19,11 +24,18 @@ try {
 
 const app = express();
 
-app.use(express.json());
-
+app.use(express.json({ limit: '10kb' }));
 app.use(morgan('dev'));
 
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/bounties', bountyRouter);
 app.use('/notes', notesRouter);
+
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
+
+app.use(globalErrorHandler);
 
 const port = process.env.PORT || 8000;
 // eslint-disable-next-line no-console
