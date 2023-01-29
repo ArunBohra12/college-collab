@@ -5,19 +5,19 @@ function Bounty(): JSX.Element {
   return (
     <Box bg='#083256' p={2} borderRadius='5' boxShadow='lg' mt={4}>
       <Flex mr={2}>
-        <Badge borderRadius='full' px='2' colorScheme='white' bg='#184772'>
+        {/* <Badge borderRadius='full' px='2' colorScheme='white' bg='#184772'>
           <Heading as='h4' size='md'>
             easy
           </Heading>
-        </Badge>
+        </Badge> */}
         <Spacer />
 
-        <BsChatRightFill />
+        {/* <BsChatRightFill />
         <Badge borderRadius='full' px='2' colorScheme='white' bg='#184772' ml={2}>
           <Heading as='h4' size='md'>
             9 days left
           </Heading>
-        </Badge>
+        </Badge> */}
       </Flex>
       <Badge borderRadius='full' px='2' colorScheme='white' bg='#184772'>
         <Heading as='h4' size='md'>

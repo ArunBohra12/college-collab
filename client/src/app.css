@@ -26,6 +26,7 @@ html body {
   min-height: 100vh;
 }
 .app{
-  background-color: #083256;
+  /* background-color: #083256; */
+  background-color: #EBF8FF;
   min-height: 73rem;
 }
