@@ -20,7 +20,8 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "import/extensions": [0, { "<js>": "always" }]
   },
   "parserOptions": {
     "sourceType": "module"
