@@ -2,7 +2,7 @@ import { Box, Button, Heading, Img, Input, Link, LinkBox, Text } from '@chakra-u
 import React from 'react';
 import './signup.css';
 
-function SignUp() {
+function SignUp(): JSX.Element {
   return (
     <div>
       <Box display='flex'>

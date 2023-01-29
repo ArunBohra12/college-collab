@@ -1,5 +1,4 @@
 import { Badge, Box, Flex, Heading, Spacer } from '@chakra-ui/react';
-import { BsChatRightFill } from 'react-icons/bs';
 
 function Bounty(): JSX.Element {
   return (
