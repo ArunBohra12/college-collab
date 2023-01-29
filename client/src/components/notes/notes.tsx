@@ -1,10 +1,11 @@
 import { Box, Button, Heading, Input, Textarea } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 // import './notes.css';
 
 function Notes() {
+  const [input, setInput] = useState([]);
   return (
-    <Box bg=' #09223d' ml='25%' mr='25%' pt={5} pb={5} mt={20} boxShadow='2xl'>
+    <Box bg=' #EBF8FF' ml='25%' mr='25%' pt={5} pb={5} mt={20} boxShadow='2xl'>
       <Heading as='h2' size='xl' justifyContent='center' display='flex' mb={5} mt={5}>
         Upload pdf
       </Heading>
@@ -19,7 +20,16 @@ function Notes() {
           border='1px'
           borderColor='#ffc600'
           pb={40}>
-          <Input type='file' className='file-input' opacity='0' pt={40} display='flex' justifyContent='center' />
+          <Input
+            type='file'
+            className='file-input'
+            opacity='0'
+            pt={40}
+            display='flex'
+            justifyContent='center'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
           Select File
         </Box>
         <Box mt={2} gap='5' justifyContent='center' display='grid'>

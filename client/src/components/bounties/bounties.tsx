@@ -6,7 +6,7 @@ function Bounties(): JSX.Element {
   return (
     <Flex align='center' justify='center'>
       <Box
-        bg='#184772'
+        // bg='#BEE3F8'
         maxW='80%'
         p={4}
         mt={14}
@@ -15,7 +15,12 @@ function Bounties(): JSX.Element {
         borderRadius='5'
         color='white'
         alignContent='center'
-        boxShadow='2xl'>
+        borderRight={1}
+        borderLeft={0}
+        borderRightColor='black'
+        borderRightWidth='10rem'
+        // boxShadow='2xl'
+      >
         All bounties
         <Bounty />
         <Bounty />
