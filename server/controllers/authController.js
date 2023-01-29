@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 import promisify from 'util';
 import jwt from 'jsonwebtoken';
-import User from '../models/userModel';
-import AppError from '../utils/AppError';
-import catchAsync from '../utils/catchAsync';
+import User from '../models/userModel.js';
+import AppError from '../utils/AppError.js';
+import catchAsync from '../utils/catchAsync.js';
 
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -10,6 +11,7 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
+  console.log('hello2');
   const token = signToken(user._id);
   user.password = undefined;
 

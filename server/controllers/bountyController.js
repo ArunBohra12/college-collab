@@ -1,20 +1,9 @@
-// get all bunties --> D
-// get bounties according to user interest
-// post bounty --> D
-// post answer --> D
-// show answer  --> D
-// unhide ans --> D
-// pick answer --> D
-
-// bounty time limit
-// pick best answer limit
-// deactivate bounty once a best answer is picked
-
-import Answer from '../models/answerModel';
-import Bounty from '../models/bountyModel';
-import User from '../models/userModel';
-import AppError from '../utils/AppError';
-import catchAsync from '../utils/catchAsync';
+/* eslint-disable import/extensions */
+import Answer from '../models/answerModel.js';
+import Bounty from '../models/bountyModel.js';
+import User from '../models/userModel.js';
+import AppError from '../utils/AppError.js';
+import catchAsync from '../utils/catchAsync.js';
 
 export const getAllBounties = catchAsync(async (req, res, next) => {
   const bounties = await Bounty.find();
@@ -157,3 +146,15 @@ export const pickAnswer = catchAsync(async (req, res, next) => {
 
 //  all ans are hidden
 // once user tries to unhide any answer, it will check if its the first answer to be shown --> unhide ans and cut credits;
+
+// get all bounties --> D
+// get bounties according to user interest
+// post bounty --> D
+// post answer --> D
+// show answer  --> D
+// unhide ans --> D
+// pick answer --> D
+
+// bounty time limit
+// pick best answer limit
+// deactivate bounty once a best answer is picked

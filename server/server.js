@@ -1,28 +1,30 @@
+/* eslint-disable import/extensions */
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-// import AppError from './utils/AppError';
+import AppError from './utils/AppError.js';
 
-import authRouter from './routes/authRoutes';
-// import bountyRouter from './routes/bountyRoutes';
-// import AppError from './utils/AppError';
-// import globalErrorHandler from './controllers/errorController';
+import authRouter from './routes/authRoutes.js';
+import bountyRouter from './routes/bountyRoutes.js';
+import globalErrorHandler from './controllers/errorController.js';
 
 const app = express();
 dotenv.config();
 
+app.use(express.json({ limit: '10kb' }));
+
 app.use('/api/v1/auth', authRouter);
-// app.use('/api/v1/bounties', bountyRouter);
+app.use('/api/v1/bounties', bountyRouter);
 
 app.get('/', (req, res) => {
   res.send('arun bohra');
 });
 
-// app.all('*', (req, res, next) => {
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 const port = process.env.PORT || 8000;
 

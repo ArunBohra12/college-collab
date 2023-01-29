@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/no-import-module-exports
-import AppError from '../utils/AppError';
+/* eslint-disable import/extensions */
+import AppError from '../utils/AppError.js';
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
@@ -52,7 +52,7 @@ const sendErrorProd = (err, res) => {
   }
 };
 
-module.exports = (err, req, res, next) => {
+export default function globalErrorHandler(err, res) {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
@@ -70,4 +70,4 @@ module.exports = (err, req, res, next) => {
 
     sendErrorProd(error, res);
   }
-};
+}

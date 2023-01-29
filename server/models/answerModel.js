@@ -17,6 +17,6 @@ const answerSchema = new mongoose.Schema({
 
 // poulate users name,img, bounty level and tagline
 
-const Answer = mongoose.model('Bounty', answerSchema);
+const Answer = mongoose.model('Answer', answerSchema);
 
 export default Answer;
