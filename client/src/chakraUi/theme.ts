@@ -2,9 +2,9 @@
 import { extendTheme } from '@chakra-ui/react';
 
 // `extendTheme` will create variables for ChakraUI
-// We can then use these colors in components like following:
-// <Box bg='brand.dark-blue'></Box>
-const colorTheme = extendTheme({
+const theme = extendTheme({
+  // We can use these colors in components like following:
+  // <Box bg='brand.dark-blue'></Box>
   colors: {
     brand: {
       blue: '#083256',
@@ -12,9 +12,14 @@ const colorTheme = extendTheme({
       turquoise: '#00caf4',
       'light-blue': '#184772',
       yellow: '#ffc600',
-      white: '#d1deea',
+      white: '#ffffff',
     },
+  },
+  // We can then use these colors in components like following:
+  // <Box bg='brand.dark-blue'></Box>
+  fonts: {
+    primary: `'Rajdhani', sans-serif`,
   },
 });
 
-export default colorTheme;
+export default theme;
