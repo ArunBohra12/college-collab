@@ -11,7 +11,6 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
-  console.log('hello2');
   const token = signToken(user._id);
   user.password = undefined;
 
@@ -62,12 +61,9 @@ export const protect = catchAsync(async (req, res, next) => {
 
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
   const currentUser = await User.findById(decoded.id);
+
   if (!currentUser) {
     return next(new AppError('The user belonging to this token does no longer exist.', 401));
-  }
-
-  if (currentUser.changedPasswordAfter(decoded.iat)) {
-    return next(new AppError('User recently changed password! Please log in again.', 401));
   }
 
   req.user = currentUser;
