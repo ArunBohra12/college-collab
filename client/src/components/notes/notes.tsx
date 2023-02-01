@@ -1,6 +1,7 @@
-import { Box, Button, FormLabel, Heading, Input, Spacer, Textarea } from '@chakra-ui/react';
+import { Box, Button, FormLabel, Input, Textarea } from '@chakra-ui/react';
 import { useState } from 'react';
 // import './notes.css';
+import { FaCloudUploadAlt } from 'react-icons/fa';
 
 function Notes(): JSX.Element {
   const [uploadedFiles, setUploadedFiles] = useState<FileList[]>([]);
@@ -14,43 +15,44 @@ function Notes(): JSX.Element {
   };
 
   return (
-    <Box bg=' #EBF8FF' w='min(90vw,600px)' m='auto' mt='100px' p='20px' boxShadow='2xl'>
-      <Heading as='h2' size='xl' justifyContent='center' display='flex' mb={5} mt={5}>
-        Upload pdf
-      </Heading>
+    <Box w='min(90vw,500px)' m='auto' mt='9rem'>
       <form>
-        <Box display='grid' gap='4rem'>
+        <Box justifyContent='center'>
+          <Input borderRadius='1rem' type='text' placeholder='Title' p='2rem' pl='1.5rem' pr='1.5rem' />
+        </Box>
+        <Box mt='2rem'>
+          <Textarea
+            borderRadius='1rem'
+            placeholder='Summary for the notes'
+            height='13rem'
+            resize='none'
+            p='2rem'
+            pl='1.5rem'
+            pr='1.5rem'
+          />
+        </Box>
+        <Box mt='2rem' display='grid'>
           <FormLabel
             htmlFor='notes-input'
-            borderRadius={10}
-            display='flex'
-            justifyContent='center'
-            alignItems='center'
+            borderRadius='1rem'
+            display='grid'
+            justifyItems='center'
             className='file'
-            border='1px'
-            borderColor='#ffc600'
-            minHeight='10rem'>
-            Select File
+            border='2px'
+            borderColor='#BABACC'
+            borderStyle='dashed'
+            minHeight='10rem'
+            width='100%'
+            p='2rem'>
+            <FaCloudUploadAlt size='15rem' color='lightgray' />
+            Upload Files(PDF only)
           </FormLabel>
           <Input type='file' id='notes-input' className='file-input' display='none' onChange={handleFileInput} />
-          <Box gap='5' justifyContent='center'>
-            <Heading as='h2' size='md' mb={1} mt={1}>
-              Title:
-            </Heading>
-            <Input borderRadius='10' type='text' placeholder='Title' p={8} pl={10} pr={10} />
-          </Box>
-          <Box mt={2} gap='5'>
-            <Heading as='h2' size='md' mb={1} mt={1}>
-              About
-            </Heading>
-            <Textarea rows={5} cols={40} borderRadius='10' w='100%' placeholder='about topic' />
-          </Box>
-          <Box display='flex' justifyContent='center' mt={10}>
-            <Button color='black' colorScheme='blue' bg='#ffc600'>
-              upload
-            </Button>
-          </Box>
         </Box>
+
+        <Button colorScheme='blue' bg='#D55161' mt={10} w='100%' p={8} fontSize='2xl' color='white' mb={5}>
+          Upload
+        </Button>
       </form>
     </Box>
   );

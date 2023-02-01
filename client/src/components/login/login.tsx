@@ -1,46 +1,49 @@
-import { Box, Button, Heading, Img, Input } from '@chakra-ui/react';
+import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 import React from 'react';
-import './login.css';
+
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 function Login(): JSX.Element {
   return (
-    <div>
-      <Box display='flex'>
-        <Img></Img>
+    <Box bg='#40415A' display='flex' justifyContent='center' alignItems='center' textAlign='center' h='100%'>
+      <Box w='min(90vw,440px)'>
+        <form action=''>
+          <Heading as='h2' size='4xl' color='white'>
+            LOGIN
+          </Heading>
 
-        <Box className='login' mt={20} pl={10} pr={10} pb={10} mx='auto' boxShadow='2xl'>
-          <form action=''>
-            <Heading as='h2' size='xl' mb={5} mt={5}>
-              Login
-            </Heading>
-            <Box mt={5} gap='5'>
-              <Heading as='h2' size='md' mb={5} mt={5}>
-                Email:
-              </Heading>
-              <Input borderRadius='10' type='email' w='100%' placeholder='Email' p={8} pl={10} pr={10} width='xl' />
-            </Box>
-            <Box mt={5} gap='5'>
-              <Heading as='h2' size='md' mb={5} mt={5}>
-                password:
-              </Heading>
-              <Input
-                borderRadius='10'
-                type='password'
-                w='100%'
-                placeholder='password'
-                p={8}
-                pl={10}
-                pr={10}
-                width='xl'
-              />
-            </Box>
-            <Button colorScheme='blue' bg='#ffc600' mt={10} width='xl' height={14} color='#09223d'>
-              Log in
-            </Button>
-          </form>
-        </Box>
+          <Box
+            mt='2rem'
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            bg='#FFFFFF'
+            p='1rem'
+            px='2rem'
+            borderRadius='1rem'>
+            <FaEnvelope color='gray' size='15px' />
+            <Input bg='#FFFFFF' border='none' type='email' placeholder='Email Address' focusBorderColor='transparent' />
+          </Box>
+          <Box
+            mt='2rem'
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            bg='#FFFFFF'
+            p='1rem'
+            px='2rem'
+            borderRadius='1rem'>
+            <FaLock color='gray' size='1.5rem' />
+            <Input bg='#FFFFFF' border='none' type='password' placeholder='Password' focusBorderColor='transparent' />
+          </Box>
+
+          <Button colorScheme='blue' bg='#D55161' mt={10} w='100%' p={8} fontSize='2xl' color='white' mb={5}>
+            Log in
+          </Button>
+          <Text color='white'>Forgot Password? | SignUp</Text>
+        </form>
       </Box>
-    </div>
+    </Box>
   );
 }
 
