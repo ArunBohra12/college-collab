@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import promisify from 'util';
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
@@ -11,7 +10,6 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
-  console.log('hello2');
   const token = signToken(user._id);
   user.password = undefined;
 
