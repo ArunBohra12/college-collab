@@ -1,6 +1,9 @@
-import promisify from 'util';
 import jwt from 'jsonwebtoken';
+import promisify from 'util';
+
 import User from '../models/userModel.js';
+import Proposal from '../models/proposalModel.js';
+
 import AppError from '../utils/AppError.js';
 import catchAsync from '../utils/catchAsync.js';
 
@@ -46,7 +49,18 @@ export const login = catchAsync(async (req, res, next) => {
   createSendToken(user, 200, res);
 });
 
-export const proposal = catchAsync(async (req, res, next) => {});
+export const proposal = catchAsync(async (req, res, next) => {
+  const collegeDraft = await Proposal.create(req.body);
+
+  if (!collegeDraft) {
+    return next(new AppError('Couldnt make a college draft, Try Again!!'));
+  }
+
+  res.status(201).json({
+    status: 'success',
+    collegeDraft,
+  });
+});
 
 export const protect = catchAsync(async (req, res, next) => {
   let token;
