@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  
+}
+html {
+  /* This will make 1rem = 10px */
+  font-size: 62.5%;
+}
+
+/* "html body" - to override the chakra ui styles */
+html body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  /* background-color: #09223d; "dark-blue" color from brand colors */
+  /* color: #d1deea; "white" color from brand colors */
+}
+
+#root ,.app{
+  height: 100vh;
+}

@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import Answer from '../models/answerModel.js';
 import Bounty from '../models/bountyModel.js';
 import User from '../models/userModel.js';
@@ -68,14 +67,14 @@ export const unhideAnswer = catchAsync(async (req, res, next) => {
 });
 
 export const showAnswer = catchAsync(async (req, res, next) => {
-  //   cut credit and show first answer
+  // cut credit and show first answer
   const bountyId = req.params.bounty;
   const userId = req.user.id;
   const userCredits = req.user.credits;
 
   const bounty = await Bounty.findById(bountyId).populate('answers', 'hidden');
 
-  //   check if any answer is viewed
+  // check if any answer is viewed
   if (bounty.answers.filter((answer) => answer.hidden)) {
     return next(new AppError('User has already viewed an answer!!'));
   }
@@ -143,18 +142,3 @@ export const pickAnswer = catchAsync(async (req, res, next) => {
     updatedUser,
   });
 });
-
-//  all ans are hidden
-// once user tries to unhide any answer, it will check if its the first answer to be shown --> unhide ans and cut credits;
-
-// get all bounties --> D
-// get bounties according to user interest
-// post bounty --> D
-// post answer --> D
-// show answer  --> D
-// unhide ans --> D
-// pick answer --> D
-
-// bounty time limit
-// pick best answer limit
-// deactivate bounty once a best answer is picked
