@@ -1,0 +1,36 @@
+.navbarLO {
+  background-color: #40415a;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* color: white; */
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  /* overflow-x: scroll; */
+}
+.links-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 3.7rem;
+}
+.nav-signup {
+  margin-left: 2.2rem;
+  margin-right: 5.9rem;
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 1rem;
+  background-color: #f99a66;
+  border: none;
+  color: white;
+}

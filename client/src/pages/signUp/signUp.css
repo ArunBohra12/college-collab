@@ -1,0 +1,64 @@
+.signup {
+  background-color: #40415a;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-content {
+  width: min(55rem, 95%);
+}
+
+.signup-heading {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-heading > h1 {
+  color: white;
+  font-size: 6rem;
+}
+
+.signup-name-email-pass-div {
+  margin-top: 2.5rem;
+  background-color: white;
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.icons-college-email {
+  color: #babacc;
+  font-size: 2rem;
+}
+
+.icons {
+  color: #babacc;
+}
+
+.signup-button {
+  margin-top: 4rem;
+  background-color: #d55161;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.option-login {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.option-login-text {
+  color: white;
+}
