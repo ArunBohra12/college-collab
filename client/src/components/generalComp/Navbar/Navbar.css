@@ -1,0 +1,32 @@
+.nav {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.nav ul li {
+    /* border: 1px solid red; */
+  cursor: pointer;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav img {
+    display: block;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+}

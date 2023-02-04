@@ -51,6 +51,10 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: 'College',
   },
+  tagline: {
+    type: String,
+    default: null,
+  },
 });
 
 const User = mongoose.model('User', userSchema);
