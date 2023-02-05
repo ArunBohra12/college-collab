@@ -1,3 +1,4 @@
+import url from 'url';
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -23,9 +24,12 @@ try {
 }
 
 const app = express();
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 app.use(express.json({ limit: '10kb' }));
 app.use(morgan('dev'));
+
+app.use('/uploads', express.static(`${__dirname}/uploads`));
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/bounties', bountyRouter);
