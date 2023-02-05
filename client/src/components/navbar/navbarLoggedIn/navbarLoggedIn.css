@@ -20,18 +20,9 @@
   font-weight: 500;
   margin-right: 3.7rem;
 }
-.nav-signup {
-  margin-left: 2.2rem;
-  margin-right: 5.9rem;
-  font-weight: 700;
-  font-size: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  border-radius: 1rem;
-  background-color: #f99a66;
-  border: none;
-  color: white;
-  filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.25));
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 5rem;
 }
