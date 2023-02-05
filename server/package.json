@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "prod": "SET NODE_ENV=production&&nodemon server.js"
+    "prod": "SET NODE_ENV=production&&nodemon server.js",
+    "create-directories": "node ./scripts/createDirectories.js"
   },
   "author": "Arun Bohra",
   "license": "ISC",

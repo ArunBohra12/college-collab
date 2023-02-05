@@ -3,8 +3,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import AppError from './utils/AppError.js';
 
+import AppError from './utils/AppError.js';
 import authRouter from './routes/authRoutes.js';
 import bountyRouter from './routes/bountyRoutes.js';
 import globalErrorHandler from './controllers/errorController.js';

@@ -40,7 +40,7 @@ class Email {
    * @param replaceOptions - This is an object that contains the dynamic data that will be used to
    * replace the placeholders in the email template.
    */
-  async send(template, subject, replaceOptions) {
+  async #send(template, subject, replaceOptions) {
     const __dirname = nodeUrl.fileURLToPath(new URL('.', import.meta.url));
     const html = pug.renderFile(`${__dirname}/../views/emails/${template}.pug`, {
       firstName: this.firstName,
@@ -66,7 +66,7 @@ class Email {
    * replaced in the email template.
    */
   sendNotesAccessEmail(replaceOptions = {}) {
-    this.send('accessNotes', `${this.firstName} access your notes files!`, replaceOptions);
+    this.#send('accessNotes', `${this.firstName} access your notes files!`, replaceOptions);
   }
 }
 
