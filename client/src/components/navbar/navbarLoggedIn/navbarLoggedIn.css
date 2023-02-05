@@ -3,23 +3,24 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* color: white; */
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   align-items: center;
-  /* overflow-x: scroll; */
 }
+
 .links-button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .nav-links {
   color: white;
   font-size: 2rem;
   font-weight: 500;
   margin-right: 3.7rem;
 }
+
 .avatar {
   width: 3rem;
   height: 3rem;
