@@ -1,8 +1,9 @@
 import React from 'react';
+import { FaCoins, FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './navbarLoggedOut.css';
+import './navbarLoggedIn.css';
 
-function NavbarLoggedOut() {
+function NavbarLoggedIn() {
   return (
     <div className='navbarLO'>
       <div className='logo'>logo</div>
@@ -17,14 +18,13 @@ function NavbarLoggedOut() {
           Notes
         </Link>
         <Link to='/' className='nav-links'>
-          Login
+          175 <FaCoins />
         </Link>
-        <button type='button' className='nav-signup'>
-          SignUp
-        </button>
+        <img className='avatar' src='https://avatars.githubusercontent.com/u/97244608?v=4' alt='' />
+        {/* <FaUserCircle className='avatar' href='https://avatars.githubusercontent.com/u/97244608?v=4' /> */}
       </div>
     </div>
   );
 }
 
-export default NavbarLoggedOut;
+export default NavbarLoggedIn;

@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   /* color: white; */
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   align-items: center;
   /* overflow-x: scroll; */
 }
@@ -33,4 +33,5 @@
   background-color: #f99a66;
   border: none;
   color: white;
+  filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.25));
 }
