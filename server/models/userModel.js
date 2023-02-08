@@ -53,6 +53,10 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+userSchema.pre('save', function () {
+  this.passwordConfirm = undefined;
+});
+
 const User = mongoose.model('User', userSchema);
 
 export default User;

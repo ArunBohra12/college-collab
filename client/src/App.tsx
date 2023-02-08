@@ -1,18 +1,16 @@
-import './css/app.css';
-import NavbarLoggedOut from './components/navbar/navbarLoggedOut/navbarLoggedOut';
+import { Route, Routes } from 'react-router-dom';
 
-import NotesUpload from './pages/notesUpload/notesUpload';
-import NavbarLoggedIn from './components/navbar/navbarLoggedIn/navbarLoggedIn';
+import Login from './pages/login/login';
+import SignUp from './pages/signUp/signUp';
+
+import './css/app.css';
 
 function App(): JSX.Element {
   return (
-    <div className='app'>
-      {/* <NavbarLoggedOut /> */}
-      <NavbarLoggedIn />
-      {/* <Login /> */}
-      {/* <SignUp /> */}
-      <NotesUpload />
-    </div>
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
+    </Routes>
   );
 }
 
