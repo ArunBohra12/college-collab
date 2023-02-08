@@ -3,13 +3,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
+import cors from 'cors';
 
 import AppError from './utils/AppError.js';
 import authRouter from './routes/authRoutes.js';
 import bountyRouter from './routes/bountyRoutes.js';
-import globalErrorHandler from './controllers/errorController.js';
-
 import notesRouter from './routes/notesRoutes.js';
+import globalErrorHandler from './controllers/errorController.js';
 
 dotenv.config({ path: './.env' });
 
@@ -25,6 +25,9 @@ try {
 
 const app = express();
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+// Allow other origins to interact with the API
+app.use(cors({ credentials: true, origin: process.env.CLIENT_BASE_URL || 'http://localhost:3000' }));
 
 app.use(express.json({ limit: '10kb' }));
 app.use(morgan('dev'));
