@@ -1,8 +1,6 @@
 import './css/app.css';
-import NavbarLoggedOut from './components/navbar/navbarLoggedOut/navbarLoggedOut';
-
-import NotesUpload from './pages/notesUpload/notesUpload';
 import NavbarLoggedIn from './components/navbar/navbarLoggedIn/navbarLoggedIn';
+import Notes from './pages/notes/notes';
 
 function App(): JSX.Element {
   return (
@@ -11,7 +9,8 @@ function App(): JSX.Element {
       <NavbarLoggedIn />
       {/* <Login /> */}
       {/* <SignUp /> */}
-      <NotesUpload />
+      {/* <NotesUpload /> */}
+      <Notes />
     </div>
   );
 }
