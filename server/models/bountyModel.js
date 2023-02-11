@@ -14,6 +14,10 @@ const bountySchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please specify the bounty for the hunters!!'],
   },
+  askedBy: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+  },
   answers: [
     {
       type: mongoose.Types.ObjectId,

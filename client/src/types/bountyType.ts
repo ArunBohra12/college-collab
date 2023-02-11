@@ -1,4 +1,5 @@
 export interface BountyProps {
+  id: string;
   level: string;
   price: number;
   ques: string;
@@ -6,6 +7,7 @@ export interface BountyProps {
     {
       ans: string;
       user: HunterProps;
+      hidden: boolean;
     }
   ];
 }
