@@ -24,6 +24,7 @@
     "import/extensions": [0, { "<js>": "always" }]
   },
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": "latest"
   }
 }

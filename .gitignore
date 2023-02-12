@@ -25,7 +25,9 @@ node_modules
 client/dist
 client/dist-ssr
 client/*.local
+client/.env
 
 # ###################################
 # FILES TO IGNORE ON THE SERVER
 server/.env
+server/uploads

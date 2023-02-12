@@ -1,0 +1,71 @@
+.login {
+  background-color: #40415a;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.login-content {
+  width:min(55rem,95%) ;
+}
+.login-heading {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+}
+.login-heading > h1 {
+  color: white;
+  font-size: 6rem;
+}
+
+.email-div {
+  margin-top: 4rem;
+  background-color: white;
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.email-div > input {
+  outline: none;
+  border: none;
+  margin-left: 1rem;
+  width: 100%;
+}
+.pass-div {
+  margin-top: 4rem;
+  background-color: white;
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.pass-div > input {
+  outline: none;
+  border: none;
+  margin-left: 1rem;
+  width: 100%;
+}
+.icons {
+  color: #babacc;
+}
+.login-button {
+  margin-top: 4rem;
+  background-color: #d55161;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.option {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.option-signup {
+  margin-left: 0.5rem;
+}

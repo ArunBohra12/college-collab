@@ -17,16 +17,19 @@ const notesSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  tags: [String],
   previewPdf: {
     type: String,
   },
   notes: {
     type: String,
     required: true,
+    select: false,
   },
   filename: {
     type: String,
     required: true,
+    select: false,
   },
   createdAt: {
     type: Date,
