@@ -4,7 +4,7 @@ import promisify from 'util';
 import User from '../models/userModel.js';
 import Proposal from '../models/proposalModel.js';
 
-import AppError from '../utils/AppError.js';
+import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 
 const signToken = (id) =>

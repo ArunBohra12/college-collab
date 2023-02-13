@@ -3,7 +3,7 @@ import * as readline from 'readline';
 import College from '../models/collegeModel';
 import Proposal from '../models/proposalModel';
 // import User from '../models/userModel';
-import AppError from '../utils/AppError';
+import AppError from '../utils/appError';
 import catchAsync from '../utils/catchAsync';
 
 const rl = readline.createInterface({

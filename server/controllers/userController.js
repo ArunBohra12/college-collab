@@ -1,9 +1,10 @@
-import catchAsync from '../utils/catchAsync';
+import User from '../models/userModel.js';
+import catchAsync from '../utils/catchAsync.js';
+import * as factory from './handlerFactory.js';
 
-export const getUser = catchAsync(async (res) => {
-  res.send('hjkfb');
+export const getMe = catchAsync(async (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
 });
 
-export const getMe = catchAsync(async (res) => {
-  res.send('kdjcn');
-});
+export const getUser = factory.getOne(User);

@@ -19,6 +19,10 @@ const projectSchema = new mongoose.Schema({
       },
     },
   ],
+  coverImage: {
+    typr: String,
+    default: null,
+  },
   videoLink: {
     type: String,
     required: [true, 'you must provide a valid video link'],
@@ -35,10 +39,25 @@ const projectSchema = new mongoose.Schema({
       ref: 'User',
     },
   ],
-  coverImage: {
-    typr: String,
-    default: null,
+  problemStatement: {
+    type: String,
   },
+  howItWorks: {
+    type: String,
+  },
+  howItsBuilt: {
+    type: String,
+  },
+  futureImprovements: {
+    type: String,
+  },
+  techStack: [
+    {
+      tag: {
+        type: String,
+      },
+    },
+  ],
 });
 
 const Project = mongoose.model('Project', projectSchema);
