@@ -1,0 +1,5 @@
+# Client files
+client/node_modules
+
+# Server files
+server/node_modules
