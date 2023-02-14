@@ -1,7 +1,6 @@
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/appError.js';
 import APIFeatures from '../utils/apiFeatures.js';
-import User from '../models/userModel';
 
 export const deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
@@ -68,11 +67,7 @@ export const getOne = (Model, popOptions) =>
 
 export const getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    // To allow for nested GET reviews on tour (hack)
-    let filter = {};
-    if (req.params.postId) filter = { post: req.params.postId };
-
-    const features = new APIFeatures(Model.find(filter), req.query).sort().paginate();
+    const features = new APIFeatures(Model.find(), req.query).sort().paginate();
     const doc = await features.query;
 
     res.status(200).json({
@@ -80,26 +75,6 @@ export const getAll = (Model) =>
       results: doc.length,
       data: {
         data: doc,
-      },
-    });
-  });
-
-export const updateUser = (excludedFields) =>
-  catchAsync(async (req, res, next) => {
-    const queryObj = req.body;
-    excludedFields.forEach((el) => delete queryObj[el]);
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, queryObj, {
-      new: true,
-      runValidators: true,
-    });
-    if (!updatedUser) {
-      return next(new AppError('No document found with that ID', 404));
-    }
-
-    res.status(200).json({
-      status: 'success',
-      data: {
-        updatedUser,
       },
     });
   });

@@ -11,7 +11,7 @@ const hackathonSchema = new mongoose.Schema({
   },
   collaborators: [
     {
-      type: mongoose.type.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: 'College',
     },
   ],
@@ -33,14 +33,6 @@ const hackathonSchema = new mongoose.Schema({
       ref: 'Prize',
     },
   ],
-  about: {
-    type: String,
-    required: [true, 'Tell us about the hackathon ypu are organising'],
-  },
-  problemStatement: {
-    type: String,
-    default: null,
-  },
   startDate: {
     type: Date,
     required: [true, 'Specify a starting date for the hackathin'],
@@ -57,11 +49,19 @@ const hackathonSchema = new mongoose.Schema({
       },
     },
   ],
+  problemStatement: {
+    type: String,
+    default: null,
+  },
+  about: {
+    type: String,
+    required: [true, 'Tell us about the hackathon ypu are organising'],
+  },
   judges: {
     type: mongoose.Types.ObjectId,
     ref: 'User',
   },
-  judginfgCriteria: [
+  judgingCriteria: [
     {
       criteria: {
         type: String,
@@ -71,6 +71,12 @@ const hackathonSchema = new mongoose.Schema({
         type: String,
         default: null,
       },
+    },
+  ],
+  projects: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: 'Project',
     },
   ],
 });
