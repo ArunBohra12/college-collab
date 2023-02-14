@@ -1,0 +1,43 @@
+.notes {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.search {
+  padding-top: 4rem;
+  flex: 0.2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search > Input {
+  height: fit-content;
+  border: none;
+  border-bottom: 2px solid gray;
+  width: fit-content;
+  width: 80%;
+}
+
+.all-notes {
+  flex: 0.8;
+  border-left: 1px solid lightgray;
+  padding: 2rem;
+}
+
+.note {
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.notes-buy-btn {
+  height: fit-content;
+  background-color: #40415a;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border: none;
+}
