@@ -1,19 +1,22 @@
-import './css/app.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Bounty from './pages/Bounty';
 
-// import Login from './pages/login/login';
 import SignUp from './pages/signUp/signUp';
+import Login from './pages/login/login';
+import Home from './pages/home/home';
+import Bounty from './pages/bounty/bounty';
+import Notes from './pages/notes/notes';
 import Profile from './pages/profile/profile';
+
+import './css/app.css';
 
 function App(): JSX.Element {
   return (
     <Routes>
+      <Route path='/signup' element={<SignUp />} />
+      <Route path='/login' element={<Login />} />
       <Route path='/' element={<Home />} />
       <Route path='/bounties' element={<Bounty />} />
-      {/* <Route path='/' element={<Login />} /> */}
-      <Route path='/signup' element={<SignUp />} />
+      <Route path='/notes' element={<Notes />} />
       <Route path='/profile' element={<Profile />} />
     </Routes>
   );

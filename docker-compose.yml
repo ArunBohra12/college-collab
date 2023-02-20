@@ -1,0 +1,33 @@
+version: "3"
+services:
+  # Server configuration
+  server:
+    build:
+      context: ./server
+    ports:
+      - "8000:8000"
+    environment:
+      MONGO_URL: mongodb://mongodb:27017/college-collab
+    volumes:
+      - ./server:/app
+
+  # Client configuration
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+
+  # MongoDB configuration
+  mongodb:
+    image: mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb:/data/college-collab
+
+# Volume configuration
+volumes:
+  mongodb:
