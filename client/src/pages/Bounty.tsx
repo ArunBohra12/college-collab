@@ -3,7 +3,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import BountyCard from '../components/bountyComp/bountyCard/BountyCard';
 import PostBounty from '../components/bountyComp/postBounty/PostBounty';
-import Navbar from '../components/generalComp/Navbar/Navbar';
+// import Navbar from '../components/generalComp/Navbar/Navbar';
+import NavbarLoggedIn from '../components/navbar/navbarLoggedIn/navbarLoggedIn';
 import { BountyProps } from '../types/bountyType';
 
 function Bounty() {
@@ -21,7 +22,8 @@ function Bounty() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavbarLoggedIn />
       <div>
         <PostBounty />
         {bounties.map((bounty) => {

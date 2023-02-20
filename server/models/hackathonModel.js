@@ -41,6 +41,10 @@ const hackathonSchema = new mongoose.Schema({
     type: Date,
     required: [true, 'Specify a end date for the hackathin'],
   },
+  participationEndDate: {
+    type: Date,
+    // default: Date.now(),
+  },
   eligibility: [
     {
       criteria: {
@@ -77,6 +81,12 @@ const hackathonSchema = new mongoose.Schema({
     {
       type: mongoose.Types.ObjectId,
       ref: 'Project',
+    },
+  ],
+  participants: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
     },
   ],
 });

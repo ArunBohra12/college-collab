@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import promisify from 'util';
+import { promisify } from 'util';
 
 import User from '../models/userModel.js';
 import Proposal from '../models/proposalModel.js';
@@ -35,12 +35,12 @@ export const signup = catchAsync(async (req, res) => {
 });
 
 export const login = catchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { collegeEmail, password } = req.body;
 
-  if (!email || !password) {
+  if (!collegeEmail || !password) {
     return next(new AppError('Please provide email and password!', 400));
   }
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ collegeEmail }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError('Incorrect email or password', 401));

@@ -7,4 +7,5 @@ export const getMe = catchAsync(async (req, res, next) => {
   next();
 });
 
+export const getAllUsers = factory.getAll(User);
 export const getUser = factory.getOne(User);

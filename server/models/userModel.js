@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -57,12 +58,15 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.pre('save', function () {
+userSchema.pre('save', async function () {
+  this.password = await bcrypt.hash(this.password, 12);
   this.passwordConfirm = undefined;
 });
+
+userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
 
 const User = mongoose.model('User', userSchema);
 
 export default User;
-
-// name, email, college email, password, socials, credits, bounty level, karma, past projects
