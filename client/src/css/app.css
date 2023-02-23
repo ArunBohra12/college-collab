@@ -21,3 +21,8 @@ body {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 400;
 }
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,7 +1,7 @@
 import Answer from '../models/answerModel.js';
 import Bounty from '../models/bountyModel.js';
 import User from '../models/userModel.js';
-import AppError from '../utils/AppError.js';
+import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 
 export const getAllBounties = catchAsync(async (req, res, next) => {

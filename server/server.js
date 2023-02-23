@@ -5,10 +5,13 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import AppError from './utils/AppError.js';
+import AppError from './utils/appError.js';
 import authRouter from './routes/authRoutes.js';
 import bountyRouter from './routes/bountyRoutes.js';
 import notesRouter from './routes/notesRoutes.js';
+import userRouter from './routes/userRoutes.js';
+import hackathonRouter from './routes/hackathonRoutes.js';
+
 import globalErrorHandler from './controllers/errorController.js';
 
 dotenv.config({ path: './.env' });
@@ -35,8 +38,12 @@ app.use(morgan('dev'));
 app.use('/uploads', express.static(`${__dirname}/uploads`));
 
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/user', userRouter);
+app.use('/api/v1/hackathon', hackathonRouter);
 app.use('/api/v1/bounties', bountyRouter);
 app.use('/notes', notesRouter);
+
+// Routes --> auth, user, college, hackathons, bounties, notes, seminars
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
