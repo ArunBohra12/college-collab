@@ -2,7 +2,12 @@
   margin-top: 2rem;
   display: flex;
 }
-
+.h3-notes-upload-link {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  color: #40415a;
+}
 .search {
   padding-top: 4rem;
   flex: 0.2;

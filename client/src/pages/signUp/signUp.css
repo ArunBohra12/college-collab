@@ -4,6 +4,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .signup-content {
@@ -11,7 +12,6 @@
 }
 
 .signup-heading {
-  margin-top: 6rem;
   display: flex;
   justify-content: center;
 }
@@ -22,11 +22,13 @@
 }
 
 .signup-name-email-pass-div {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
   background-color: white;
   display: flex;
-  padding: 1.5rem;
   border-radius: 1rem;
+  padding-left: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .icons-college-email {

@@ -3,4 +3,8 @@
   border: none;
   margin-left: 1rem;
   width: 100%;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 1rem;
 }

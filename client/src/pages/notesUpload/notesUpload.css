@@ -27,7 +27,7 @@
   background-color: white;
   margin-top: 2.5rem;
   display: flex;
-  padding: 1.5rem;
+
   border-radius: 1rem;
 }
 
@@ -54,5 +54,5 @@
 }
 .notes-input {
   border: 1px solid lightgray;
-  padding: 10rem;
+  padding: 8rem;
 }
