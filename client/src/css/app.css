@@ -20,9 +20,10 @@ body {
   width: 100%;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 400;
+  background-color: aliceblue;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }

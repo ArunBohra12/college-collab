@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
 import Input from '../../components/input/input';
 import './notes.css';
 
 function Notes() {
   return (
     <div className='notes'>
+      <Link to='/notesupload' className='notes-upload-link'>
+        <h3 className='h3-notes-upload-link'>Upload Notes ?</h3>
+      </Link>
       <div className='search'>
         <Input
           otherInputAttributes={{
