@@ -2,7 +2,7 @@ import './input.css';
 
 type InputProps = {
   className?: string;
-  otherInputAttributes?: React.InputHTMLAttributes<object>;
+  otherInputAttributes?: React.InputHTMLAttributes<HTMLInputElement>;
 };
 
 function Input(props: InputProps) {

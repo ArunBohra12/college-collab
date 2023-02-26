@@ -23,8 +23,6 @@ function SignUp() {
   });
 
   const handleInputChange = (field: string, value: string): void => {
-    if (!field || !value) return;
-
     setSignupData((prevData) => {
       return { ...prevData, [field]: value };
     });
