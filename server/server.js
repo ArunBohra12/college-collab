@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import AppError from './utils/appError.js';
+import AppError from './utils/AppError.js';
 import authRouter from './routes/authRoutes.js';
 import bountyRouter from './routes/bountyRoutes.js';
 import notesRouter from './routes/notesRoutes.js';

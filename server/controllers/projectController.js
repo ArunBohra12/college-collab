@@ -1,6 +1,6 @@
 import Hackathon from '../models/hackathonModel.js';
 import Project from '../models/projectModel.js';
-import AppError from '../utils/appError.js';
+import AppError from '../utils/AppError.js';
 import catchAsync from '../utils/catchAsync.js';
 
 export const submitProject = catchAsync(async (req, res, next) => {
