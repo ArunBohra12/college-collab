@@ -1,0 +1,13 @@
+.bounty-main {
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+}
+.bounty-card {
+  display: grid;
+  justify-items: end;
+  width: 90%;
+}
+.Bounties-heading {
+  margin: 1rem;
+}

@@ -1,3 +1,81 @@
-.post-container{
-    border: 1px solid red;
+.post-bounty-main {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  margin: 1rem;
+}
+.post-container {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
+  background-color: white;
+  width: 100%;
+}
+.heading-post {
+  margin: 2rem;
+}
+.post-bounty-text {
+  width: 100%;
+}
+.post-bounty-text > textarea {
+  resize: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: none;
+  border: 1px solid white;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
+  width: 100%;
+}
+.price {
+  display: flex;
+}
+.credits {
+}
+.price-input {
+  max-width: 5rem;
+  margin-left: 1rem;
+}
+.difficulty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.easy {
+  display: flex;
+  margin: 1rem;
+}
+.medium {
+  display: flex;
+  margin: 1rem;
+}
+.hard {
+  margin: 1rem;
+  display: flex;
+}
+.hard > input {
+  margin-left: 0.5rem;
+  color: black;
+}
+.easy > input {
+  margin-left: 0.5rem;
+}
+.medium > input {
+  margin-left: 0.5rem;
+}
+
+.post-bounty-btn {
+  height: fit-content;
+  background-color: #40415a;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border: none;
+  border-radius: 0.3rem;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
 }

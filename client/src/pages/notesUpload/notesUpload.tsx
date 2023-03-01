@@ -11,7 +11,7 @@ function NotesUpload() {
     if (!e.target.files || !e.target.files[0]) return;
     setNotesFile(e.target.files[0]);
   };
-
+  // const handleFilesSubmit = async (e: React.FormEvent<HTMLFormElement>) => {};
   return (
     <div className='upload'>
       <div className='upload-content'>

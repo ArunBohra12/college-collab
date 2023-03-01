@@ -3,12 +3,7 @@ import React from 'react';
 import NavbarLoggedIn from '../../components/navbar/navbarLoggedIn/navbarLoggedIn';
 
 function Home() {
-  return (
-    <div>
-      {/* <Navbar /> */}
-      <NavbarLoggedIn />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default Home;

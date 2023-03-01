@@ -8,7 +8,7 @@ function NavbarLoggedIn() {
     <div className='navbarLO'>
       <div className='logo'>logo</div>
       <div className='links-button'>
-        <Link to='/' className='nav-links'>
+        <Link to='/bounties' className='nav-links'>
           Bounties
         </Link>
         <Link to='/' className='nav-links'>
