@@ -1,0 +1,19 @@
+.bounty-card-container {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e7e7e7;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
+  border-radius: 1rem;
+  /* width: 75%; */
+}
+.level-name {
+  display: flex;
+  justify-content: space-between;
+}
+.question-text {
+  padding: 1rem;
+}
+.answers {
+  display: grid;
+  justify-items: center;
+}

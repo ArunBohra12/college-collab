@@ -1,0 +1,32 @@
+.bounty-details {
+  margin: 1rem;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e7e7e7;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
+  border-radius: 1rem;
+  width: 90%;
+}
+.bounty-author-price-level {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.bounty-single-page-container {
+  display: grid;
+  justify-items: center;
+}
+.all-answers {
+  width: 90%;
+}
+.answers {
+  margin: 1rem;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e7e7e7;
+  filter: drop-shadow(0px 4px 4px #d7e6e8);
+  justify-items: start;
+}
+.answer-heading {
+  margin: 2rem;
+}

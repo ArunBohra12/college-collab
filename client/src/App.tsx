@@ -9,18 +9,24 @@ import Profile from './pages/profile/profile';
 
 import './css/app.css';
 import NotesUpload from './pages/notesUpload/notesUpload';
+import NavbarLoggedIn from './components/navbar/navbarLoggedIn/navbarLoggedIn';
+import BountySinglePage from './pages/bountySinglePage/bountySinglePage';
 
 function App(): JSX.Element {
   return (
-    <Routes>
-      <Route path='/signup' element={<SignUp />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/' element={<Home />} />
-      <Route path='/bounties' element={<Bounty />} />
-      <Route path='/notes' element={<Notes />} />
-      <Route path='/notesupload' element={<NotesUpload />} />
-      <Route path='/profile' element={<Profile />} />
-    </Routes>
+    <div className=''>
+      <NavbarLoggedIn />
+      <Routes>
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/bounties' element={<Bounty />} />
+        <Route path='/bountyPage' element={<BountySinglePage />} />
+        <Route path='/notes' element={<Notes />} />
+        <Route path='/notesupload' element={<NotesUpload />} />
+        <Route path='/profile' element={<Profile />} />
+      </Routes>
+    </div>
   );
 }
 
